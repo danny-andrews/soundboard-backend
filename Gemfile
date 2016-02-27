@@ -7,6 +7,12 @@ gem 'data_mapper'
 gem 'warden-hmac-authentication', require: 'hmac/strategies/header'
 
 group :development, :test do
-  gem 'dm-sqlite-adapter'
   gem 'rubocop'
+  gem 'pry'
+end
+
+group :test do
+  gem 'dm-sqlite-adapter'
+  gem 'factory_girl'
+  gem 'database_cleaner'
 end

@@ -1,8 +1,11 @@
-require 'minitest/autorun'
 require_relative '../test_setup'
 
 class TestDj < Minitest::Test
-  def test_dj_does_something
-    assert Dj.new(id: 1, stage_name: 'bob')
+  def test_factory
+    assert FactoryGirl.build(:dj).valid?
+  end
+
+  def test_validates_existence_of_stage_name
+    refute FactoryGirl.build_stubbed(:dj, stage_name: nil).valid?
   end
 end
