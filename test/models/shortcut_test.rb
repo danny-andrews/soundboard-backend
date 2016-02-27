@@ -16,7 +16,7 @@ class TestShortcut < Minitest::Test
   end
 
   def test_validates_presence_of_sound_id_when_command_is_play_sound
-    shortcut =  FactoryGirl.build_stubbed(
+    shortcut = FactoryGirl.build_stubbed(
       :shortcut,
       shortcut_command_id: ShortcutCommand::VALID_NAMES[:PLAY_SOUND],
       sound_id: nil
