@@ -1,6 +1,7 @@
 require 'rake/testtask'
 require 'rubocop/rake_task'
 require 'data_mapper'
+require_relative './models'
 
 desc 'Lint files'
 RuboCop::RakeTask.new(:lint)
@@ -15,5 +16,11 @@ task :ci do
 end
 
 task :migrate do
+  require_relative './setup_db'
   DataMapper.auto_migrate!
+end
+
+task :seed do
+  require_relative './setup_db'
+  require_relative './seeds'
 end

@@ -7,9 +7,7 @@ class Key
   include DataMapper::Resource
 
   property :id, Serial, required: true
-  property :code, String, required: true
-
-  validates_within :code, set: VALID_CODES
+  property :code, String, required: true, set: VALID_CODES
 
   has n, :shortcuts
 end

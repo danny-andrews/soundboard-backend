@@ -1,0 +1,8 @@
+require_relative './serializers/base_serializer'
+require_relative './serializers/board_serializer'
+require_relative './serializers/config_serializer'
+require_relative './serializers/dj_serializer'
+require_relative './serializers/key_serializer'
+require_relative './serializers/shortcut_serializer'
+require_relative './serializers/shortcut_command_serializer'
+require_relative './serializers/sound_serializer'
