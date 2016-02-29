@@ -1,0 +1,9 @@
+---
+development:
+  database_url: 'postgres://skypal:imypal@localhost/soundbored'
+
+test:
+  database_url: 'sqlite::memory:'
+
+production:
+  database_url: <%= ENV['DATABASE_URL'] %>

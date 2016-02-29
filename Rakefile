@@ -1,12 +1,12 @@
 require 'rake/testtask'
 require 'rubocop/rake_task'
 require 'data_mapper'
-require_relative './models'
 
 desc 'Lint files'
 RuboCop::RakeTask.new(:lint)
 
 Rake::TestTask.new do |t|
+  ENV['RACK_ENV'] = 'test'
   t.test_files = FileList['test/**/*_test.rb']
 end
 
