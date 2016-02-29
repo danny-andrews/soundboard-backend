@@ -1,7 +1,7 @@
 root = File.expand_path(__dir__)
 $LOAD_PATH.unshift(root)
 
-require 'pry'
+require 'bundler'
 require 'grape'
 require 'json'
 require 'data_mapper'

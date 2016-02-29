@@ -9,6 +9,7 @@ module Configuration
     attr_reader :config
 
     def initialize(env)
+      Bundler.require(:default, env.to_sym)
       unless ENVIRONMENTS.include?(env)
         raise StandardError, 'RACK_ENV environment variable must be set to ' \
           "one of the following [#{ENVIRONMENTS.join(', ')}]"
