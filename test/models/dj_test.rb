@@ -1,6 +1,6 @@
 require_relative '../test_setup'
 
-class TestDj < Minitest::Test
+class DjTest < Minitest::Test
   def test_factory
     assert FactoryGirl.build(:dj).valid?
   end

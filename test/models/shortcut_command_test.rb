@@ -1,6 +1,6 @@
 require_relative '../test_setup'
 
-class TestShortcutCommand < Minitest::Test
+class ShortcutCommandTest < Minitest::Test
   def test_validates_existence_of_name
     refute FactoryGirl.build_stubbed(:shortcut_command, name: nil).valid?
   end

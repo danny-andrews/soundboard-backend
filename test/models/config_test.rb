@@ -1,6 +1,6 @@
 require_relative '../test_setup'
 
-class TestConfig < Minitest::Test
+class ConfigTest < Minitest::Test
   def test_factory
     assert FactoryGirl.build(:config).valid?
   end

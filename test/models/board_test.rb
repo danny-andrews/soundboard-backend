@@ -1,6 +1,6 @@
 require_relative '../test_setup'
 
-class TestBoard < Minitest::Test
+class BoardTest < Minitest::Test
   def test_factory
     assert FactoryGirl.build(:board).valid?
   end

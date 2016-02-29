@@ -1,6 +1,6 @@
 require_relative '../test_setup'
 
-class TestKey < Minitest::Test
+class KeyTest < Minitest::Test
   def test_factory
     assert FactoryGirl.build_stubbed(:key).valid?
   end

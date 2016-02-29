@@ -1,6 +1,6 @@
 require_relative '../test_setup'
 
-class TestSound < Minitest::Test
+class SoundTest < Minitest::Test
   def test_factory
     assert FactoryGirl.build(:sound).valid?
   end

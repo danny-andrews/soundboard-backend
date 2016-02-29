@@ -1,6 +1,6 @@
 require_relative '../test_setup'
 
-class TestShortcut < Minitest::Test
+class ShortcutTest < Minitest::Test
   def test_factory
     assert FactoryGirl.build(:shortcut).valid?
   end
