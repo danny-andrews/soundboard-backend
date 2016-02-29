@@ -2,7 +2,6 @@ require 'rake/testtask'
 require 'rubocop/rake_task'
 require 'data_mapper'
 
-desc 'Lint files'
 RuboCop::RakeTask.new(:lint)
 
 Rake::TestTask.new do |t|
@@ -23,4 +22,9 @@ end
 task :seed do
   require_relative './setup_db'
   require_relative './seeds'
+end
+
+task :run do
+  ENV['RACK_ENV'] = 'development'
+  sh('rackup')
 end
