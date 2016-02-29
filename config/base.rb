@@ -1,5 +1,6 @@
 require 'yaml'
 require 'ostruct'
+require 'bundler'
 
 module Configuration
   ENVIRONMENTS = %w(test development production).freeze
@@ -11,6 +12,7 @@ module Configuration
     def initialize(env)
       Bundler.require(:default, env.to_sym)
       Dir[File.join('app', '**', '*.rb')].each { |file| require file }
+      DataMapper.finalize
       unless ENVIRONMENTS.include?(env)
         raise StandardError, 'RACK_ENV environment variable must be set to ' \
           "one of the following [#{ENVIRONMENTS.join(', ')}]"
