@@ -12,6 +12,7 @@ require 'config_factory'
 ConfigFactory.create(ENV['RACK_ENV']).run
 
 class App < Grape::API
-  format :json
+  content_type :jsonapi, 'application/vnd.api+json'
+  format :jsonapi
   mount Api::Keys
 end
