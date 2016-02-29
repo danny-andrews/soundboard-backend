@@ -1,6 +1,10 @@
+$LOAD_PATH.unshift(File.expand_path(__dir__))
+
 require 'rake/testtask'
 require 'rubocop/rake_task'
 require 'data_mapper'
+
+require 'config_factory'
 
 RuboCop::RakeTask.new(:lint)
 
@@ -15,13 +19,13 @@ task :ci do
 end
 
 task :migrate do
-  require_relative './setup_db'
+  ConfigFactory.create('development').setup_db
   DataMapper.auto_migrate!
 end
 
 task :seed do
-  require_relative './setup_db'
-  require_relative './seeds'
+  ConfigFactory.create('development').setup_db
+  require 'seeds'
 end
 
 task :run do
