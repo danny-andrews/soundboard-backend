@@ -6,6 +6,7 @@ gem 'dm-postgres-adapter'
 gem 'data_mapper'
 gem 'warden-hmac-authentication', require: 'hmac/strategies/header'
 gem 'jsonapi-serializers'
+gem 'active_attr'
 
 group :development, :test do
   gem 'rubocop'
