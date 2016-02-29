@@ -1,3 +1,5 @@
+Dir[File.join('config', '*.rb')].each { |file| require file }
+
 class ConfigFactory
   def self.create(env)
     case env
