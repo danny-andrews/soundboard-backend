@@ -8,12 +8,12 @@ class App < Grape::API
   format :jsonapi
 
   helpers do
-    def serializer_fac(data)
+    def serialize(data)
       case env['api.format']
       when :jsonapi
-        JsonApiSerializer.new(data)
+        Serializers::JsonApiSerializer.new(data).serialize.to_json
       else
-        NullSerializer.new(data)
+        Serializers::NullSerializer.new(data).serialize.to_json
       end
     end
   end

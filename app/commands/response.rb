@@ -1,8 +1,10 @@
-class Response
-  include ActiveAttr::Model
+module Commands
+  class Response
+    include ActiveAttr::Model
 
-  attribute :body
-  attribute :code
+    attribute :body
+    attribute :code
 
-  validates_presence_of :body, :code
+    validates_presence_of :body, :code
+  end
 end

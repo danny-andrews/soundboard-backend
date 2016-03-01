@@ -2,7 +2,7 @@ module Api
   class Keys < Grape::API
     resource :keys do
       get '/' do
-        JSONAPI::Serializer.serialize(Key.all.to_a, is_collection: true).to_json
+        serialize(Commands::ListKeys.new.execute.body)
       end
     end
   end
