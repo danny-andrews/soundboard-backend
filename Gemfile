@@ -11,10 +11,10 @@ gem 'active_attr'
 group :development, :test do
   gem 'rubocop'
   gem 'pry'
+  gem 'database_cleaner'
 end
 
 group :test do
   gem 'dm-sqlite-adapter'
   gem 'factory_girl'
-  gem 'database_cleaner'
 end

@@ -1,7 +1,7 @@
 module Commands
   class ListKeys < Commands::Base
     def execute
-      @response = Response.new(body: Key.all.to_a, code: 200)
+      success(Key.all.to_a)
     end
   end
 end

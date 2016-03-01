@@ -25,6 +25,8 @@ end
 
 task :seed do
   ConfigFactory.create('development').setup_db
+  DatabaseCleaner.strategy = :truncation
+  DatabaseCleaner.clean
   require 'seeds'
 end
 
