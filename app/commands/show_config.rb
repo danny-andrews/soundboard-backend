@@ -1,3 +1,5 @@
+require_relative './base'
+
 module Commands
   class ShowConfig < Commands::Base
     attribute :id, type: Integer, required: true

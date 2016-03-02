@@ -1,3 +1,5 @@
+require_relative './base'
+
 module Configuration
   class Test < Base
     def setup_db

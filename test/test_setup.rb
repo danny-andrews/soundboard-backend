@@ -1,11 +1,10 @@
-$LOAD_PATH.unshift(File.expand_path(__dir__))
-
-require 'minitest'
 require 'minitest/autorun'
 require 'minitest/mock'
-require 'factory_girl'
 require 'rack/test'
+
 require_relative '../app'
-Dir[File.join('test', 'support', '**', '*.rb')].each { |file| require file }
+Dir[File.join(__dir__, 'support', '**', '*.rb')].each do |file|
+  require file
+end
 
 FactoryGirl.find_definitions

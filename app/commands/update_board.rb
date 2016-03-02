@@ -1,3 +1,5 @@
+require_relative './base'
+
 module Commands
   class UpdateBoard < Commands::Base
     attribute :id, type: Integer, required: true

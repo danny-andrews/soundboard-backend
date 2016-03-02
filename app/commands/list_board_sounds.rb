@@ -1,3 +1,5 @@
+require_relative './base'
+
 module Commands
   class ListBoardSounds < Commands::Base
     attribute :id, type: Integer, required: true

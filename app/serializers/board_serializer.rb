@@ -1,3 +1,5 @@
+require_relative './base_serializer'
+
 class BoardSerializer < BaseSerializer
   attributes :name, :description
 

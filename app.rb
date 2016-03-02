@@ -1,6 +1,5 @@
-$LOAD_PATH.unshift(File.expand_path(__dir__))
+require_relative './config_factory'
 
-require 'config_factory'
 ConfigFactory.create(ENV['RACK_ENV']).run
 
 class App < Grape::API
@@ -9,12 +8,7 @@ class App < Grape::API
 
   helpers do
     def serialize(data)
-      case env['api.format']
-      when :jsonapi
-        Serializers::JsonApiSerializer.new(data).serialize
-      else
-        Serializers::NullSerializer.new(data).serialize
-      end
+      Serializers::JsonApiSerializer.new(data).serialize
     end
 
     def execute_and_render(command_class, data)

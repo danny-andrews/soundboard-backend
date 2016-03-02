@@ -1,4 +1,4 @@
-Dir[File.join('config', '*.rb')].each { |file| require file }
+Dir[File.join('./config', '*.rb')].each { |file| require_relative file }
 
 class ConfigFactory
   def self.create(env)

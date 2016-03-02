@@ -1,3 +1,5 @@
+require_relative './base_serializer'
+
 class KeySerializer < BaseSerializer
   attribute :code
 

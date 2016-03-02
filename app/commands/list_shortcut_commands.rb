@@ -1,3 +1,5 @@
+require_relative './base'
+
 module Commands
   class ListShortcutCommands < Commands::Base
     def execute

@@ -1,3 +1,5 @@
+require_relative './base'
+
 module Commands
   class ShowBoard < Commands::Base
     attribute :id, type: Integer, required: true
@@ -7,7 +9,7 @@ module Commands
       if board
         success(board)
       else
-        NotFound()
+        not_found
       end
     end
   end
