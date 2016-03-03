@@ -1,0 +1,138 @@
+FORMAT: 1A
+
+# Soundbored
+
+# Data Structures
+## Board (object)
+
++ id: 1 (number)
++ dj_id: 1 (number)
++ name: Board1 (string)
++ description: `Canned user replies` (string)
+
+## Config (object)
+
++ id: 1 (number)
++ dj_id: 1 (number)
+
+## Dj (object)
+
++ id: 1 (number)
++ stage_name: `B-Diddy` (string)
+
+## Key (object)
+
++ id: 1 (number)
++ code: KeyA (string)
+
+## Shortcut (object)
+
++ id: 1 (number)
++ config_id: 1 (number)
++ key_id: 1 (number)
++ shortcut_command_id: 1 (number)
++ sound_id: 1 (number)
++ meta: {} (object)
+
+## ShortcutCommand (object)
+
++ id: 1 (number)
++ name: `KILL_ALL_SOUNDS` (string)
+
+## Sound (object)
+
++ id 1 (number)
++ board_sound_id 1 (number)
++ display_name Woof (string)
++ filename `Woof.mp3` (string)
++ filepath `sounds/8392hjeay8.mp3` (string)
++ play_count 0 (number)
+
+# Resources
+
+## Board [/boards/{id}]
+
+### Show Board [GET]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+    + Attributes (Board)
+
+### Update Board [PUT]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+    + Attributes (Board)
+
+## Board Sounds [/boards/{id}/sounds]
+
+### List Board Sounds [GET]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+    + Attributes (array[Sound])
+
+## Config [/configs/{id}]
+
+### Show Config [GET]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+    + Attributes (Config)
+
+## Dj [/djs/{id}]
+
+### Update Dj [PUT]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+    + Attributes (Dj)
+
+## Sound [/sounds/{id}]
+
+### Update Sound [PUT]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+    + Attributes (Sound)
+
+### Create Sound [POST]
++ Parameters
+    + id (string)
++ Response 201 (application/json)
+    + Attributes (Sound)
+
+### Delete Sound [DELETE]
++ Parameters
+    + id (string)
++ Response 204 (application/json)
+
+## Shortcut [/shortcuts/{id}]
+
+### Create Shortcut [POST]
++ Parameters
+    + id (string)
++ Response 201 (application/json)
+    + Attributes (Shortcut)
+
+### Update Shortcut [PUT]
++ Parameters
+    + id (string)
++ Response 200 (application/json)
+    + Attributes (Sound)
+
+### Delete Shortcut [DELETE]
++ Parameters
+    + id (string)
++ Response 204 (application/json)
+
+## Keys [/keys]
+
+### List Keys [GET]
++ Response 200 (application/json)
+    + Attributes (array[Key])
+
+## ShortcutCommands [/shortcut-commands]
+### List Keys [GET]
++ Response 200 (application/json)
+    + Attributes (array[ShortcutCommand])
