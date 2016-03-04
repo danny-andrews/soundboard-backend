@@ -14,6 +14,10 @@ module Api
         end
       end
 
+      get '/' do
+        execute_and_render(Commands::ListBoards, current_user: current_user)
+      end
+
       params do
         requires :id, type: Integer
         requires :board, type: Hash do

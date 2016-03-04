@@ -4,7 +4,7 @@ class ShortcutCommand
   include DataMapper::Resource
 
   property :id, Serial, required: true
-  property :name, String, required: true, set: VALID_NAMES.values
+  property :name, String, required: true, set: VALID_NAMES.keys.map(&:to_s)
 
   has n, :shortcuts
 end

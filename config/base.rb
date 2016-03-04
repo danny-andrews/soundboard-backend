@@ -4,11 +4,11 @@ require 'bundler'
 
 module Configuration
   ENVIRONMENTS = %w(test development production).freeze
-  REQUIRED_CONFIG_KEYS = ['database_url'].freeze
+  REQUIRED_CONFIG_KEYS = ['database_url', 'secret_key'].freeze
   CONFIG_PATH = File.join(__dir__, 'config.yaml')
 
   class Base
-    attr_reader :config
+    attr_reader :config_vals
 
     def initialize(env)
       Bundler.require(:default, env.to_sym)
@@ -26,7 +26,7 @@ module Configuration
         raise StandardError, 'Missing required config key(s) ' \
           "['#{missing_keys.join(', ')}']"
       end
-      @config = OpenStruct.new(raw)
+      @config_vals = OpenStruct.new(raw)
     end
 
     def run
@@ -36,7 +36,7 @@ module Configuration
     protected
 
     def setup_db
-      DataMapper.setup(:default, config.database_url)
+      DataMapper.setup(:default, config_vals.database_url)
     end
 
     private

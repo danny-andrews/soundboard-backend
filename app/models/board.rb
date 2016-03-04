@@ -7,4 +7,8 @@ class Board
 
   belongs_to :dj
   has n, :sounds, through: :board_sounds
+
+  def self.instantiate_default_board
+    self.new(name: 'Board1', sounds: Sound.all)
+  end
 end

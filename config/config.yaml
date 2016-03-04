@@ -1,9 +1,12 @@
 ---
 development:
   database_url: 'postgres://skypal:imypal@localhost/soundbored'
+  secret_key: 'jfdsay48whoiaeaerij'
 
 test:
   database_url: 'sqlite::memory:'
+  secret_key: 'g897e45pwhguhh4wtc'
 
 production:
   database_url: <%= ENV['DATABASE_URL'] %>
+  secret_key: <%= ENV['SECRET_KEY'] %>

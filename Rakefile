@@ -36,5 +36,5 @@ end
 
 task :prod_run do
   ENV['RACK_ENV'] = 'production'
-  sh("rackup -p #{ENV['PORT']}")
+  sh("rackup -p #{ENV['PORT'] || 9292}")
 end

@@ -1,9 +1,11 @@
-class BaseSerializer
+require_relative './base_serializer'
+
+class SessionSerializer
   include JSONAPI::Serializer
 
   def type
     object.class.name.demodulize.dasherize
   end
 
-  attribute :id
+  attributes :token
 end

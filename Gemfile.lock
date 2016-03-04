@@ -103,6 +103,7 @@ GEM
     json_pure (1.8.3)
     jsonapi-serializers (0.6.3)
       activesupport
+    jwt (1.5.3)
     method_source (0.8.2)
     minitest (5.8.4)
     multi_json (1.11.2)
@@ -142,11 +143,6 @@ GEM
       coercible (~> 1.0)
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
-    warden (1.2.6)
-      rack (>= 1.0)
-    warden-hmac-authentication (0.6.4)
-      rack
-      warden
 
 PLATFORMS
   ruby
@@ -160,12 +156,12 @@ DEPENDENCIES
   factory_girl
   grape
   jsonapi-serializers
+  jwt
   minitest
   pry
   rack-test
   rake
   rubocop
-  warden-hmac-authentication
 
 BUNDLED WITH
    1.11.2
