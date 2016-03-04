@@ -36,5 +36,6 @@ end
 
 task :prod_run do
   ENV['RACK_ENV'] = 'production'
+  sh(`npm install`)
   sh("rackup -p #{ENV['PORT'] || 9292}")
 end
