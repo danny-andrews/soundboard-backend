@@ -34,6 +34,7 @@ task :run do
   sh('rackup')
 end
 
+# Deploy script
 task :prod_run do
   ENV['RACK_ENV'] = 'production'
   sh(`npm install`)
