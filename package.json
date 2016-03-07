@@ -6,6 +6,6 @@
   },
   "license": "MIT",
   "dependencies": {
-    "soundbored": "git+https://github.com/danny-andrews/soundbored#0.0.3"
+    "soundbored": "git+https://github.com/danny-andrews/soundbored#0.0.4"
   }
 }
