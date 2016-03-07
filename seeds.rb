@@ -98,7 +98,7 @@ sound = Sound.create(
   uuid: 'Yeah.mp3'
 )
 sound = Sound.create(
-  display_name: 'and-his-name-is-john-cena-1',
+  display_name: 'And His Name is John Cena',
   filename: 'and-his-name-is-john-cena-1.mp3',
   uuid: 'and-his-name-is-john-cena-1.mp3'
 )
