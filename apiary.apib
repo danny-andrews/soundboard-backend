@@ -48,20 +48,42 @@ FORMAT: 1A
 + uuid `8392hjeay8.mp3` (string)
 + play_count 0 (number)
 
+## Session (object)
++ id 1 (number)
++ token 'jkfdsay8004hiowj' (string)
+
 # Resources
+
+## Session [/login]
+
+### Login [POST]
++ Request (application/vnd.api+json)
+    + Body
+    
+                {"auid": "jkds80hfewjds", "name": "Steve"}
++ Response 201
+    + Attributes (Session)
 
 ## Board [/boards/{id}]
 
 ### Show Board [GET]
 + Parameters
     + id (string)
-+ Response 200 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 200 (application/vnd.api+json)
     + Attributes (Board)
 
 ### Update Board [PUT]
 + Parameters
     + id (string)
-+ Response 200 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 200 (application/vnd.api+json)
     + Attributes (Board)
 
 ## Board Sounds [/boards/{id}/sounds]
@@ -69,7 +91,11 @@ FORMAT: 1A
 ### List Board Sounds [GET]
 + Parameters
     + id (string)
-+ Response 200 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 200 (application/vnd.api+json)
     + Attributes (array[Sound])
 
 ## Config [/configs/{id}]
@@ -77,7 +103,11 @@ FORMAT: 1A
 ### Show Config [GET]
 + Parameters
     + id (string)
-+ Response 200 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 200 (application/vnd.api+json)
     + Attributes (Config)
 
 ## Dj [/djs/{id}]
@@ -85,7 +115,11 @@ FORMAT: 1A
 ### Update Dj [PUT]
 + Parameters
     + id (string)
-+ Response 200 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 200 (application/vnd.api+json)
     + Attributes (Dj)
 
 ## Sound [/sounds/{id}]
@@ -93,46 +127,84 @@ FORMAT: 1A
 ### Update Sound [PUT]
 + Parameters
     + id (string)
-+ Response 200 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 200 (application/vnd.api+json)
     + Attributes (Sound)
 
 ### Create Sound [POST]
 + Parameters
     + id (string)
-+ Response 201 (application/json)
++ Request (multipart/form-data)
+    + Headers
+    
+            Bearer: validtoken
+    + Body
+
+            {
+              "display_name": "Boom",
+              "file_data": new Blob()
+            }
++ Response 201 (application/vnd.api+json)
     + Attributes (Sound)
 
 ### Delete Sound [DELETE]
 + Parameters
     + id (string)
-+ Response 204 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 204 (application/vnd.api+json)
 
 ## Shortcut [/shortcuts/{id}]
 
 ### Create Shortcut [POST]
 + Parameters
     + id (string)
-+ Response 201 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 201 (application/vnd.api+json)
     + Attributes (Shortcut)
 
 ### Update Shortcut [PUT]
 + Parameters
     + id (string)
-+ Response 200 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 200 (application/vnd.api+json)
     + Attributes (Sound)
 
 ### Delete Shortcut [DELETE]
 + Parameters
     + id (string)
-+ Response 204 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 204 (application/vnd.api+json)
 
 ## Keys [/keys]
 
 ### List Keys [GET]
-+ Response 200 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 200 (application/vnd.api+json)
     + Attributes (array[Key])
 
 ## ShortcutCommands [/shortcut-commands]
 ### List Keys [GET]
-+ Response 200 (application/json)
++ Request (application/vnd.api+json)
+    + Headers
+    
+            Bearer: validtoken
++ Response 200 (application/vnd.api+json)
     + Attributes (array[ShortcutCommand])
